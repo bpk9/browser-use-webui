@@ -6,6 +6,8 @@
 [![Discord](https://img.shields.io/discord/1303749220842340412?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://link.browser-use.com/discord)
 [![Documentation](https://img.shields.io/badge/Documentation-📕-blue)](https://docs.browser-use.com)
 [![WarmShao](https://img.shields.io/twitter/follow/warmshao?style=social)](https://x.com/warmshao)
+![Docker Pulls](https://img.shields.io/docker/pulls/bpk9/browser-use-webui)
+![Docker Image Size](https://img.shields.io/docker/image-size/bpk9/browser-use-webui)
 
 This project builds upon the foundation of the [browser-use](https://github.com/browser-use/browser-use), which is designed to make websites accessible for AI agents.
 
@@ -144,6 +146,16 @@ TARGETPLATFORM=linux/arm64 docker compose up --build
 - VNC Viewer (for watching browser interactions): Open `http://localhost:6080/vnc.html`
   - Default VNC password: "youvncpassword"
   - Can be changed by setting `VNC_PASSWORD` in your `.env` file
+
+### Option 3: Unraid Installation
+
+1. Search for "browser-use-webui" in Community Applications
+2. Configure your API keys in the template
+3. Click "Apply"
+
+Access:
+- Web-UI: `http://[UNRAID-IP]:7788`
+- VNC Viewer: `http://[UNRAID-IP]:6080/vnc.html`
 
 ## Changelog
 - [x] **2025/01/26:** Thanks to @vvincent1234. Now browser-use-webui can combine with DeepSeek-r1 to engage in deep thinking!
