@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>browser-use-webui</Name>
+  <Repository>bpk9/browser-use-webui</Repository>
+  <Registry>https://hub.docker.com/r/bpk9/browser-use-webui</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/browser-use/web-ui/issues</Support>
+  <Project>https://github.com/browser-use/web-ui</Project>
+  <Overview>
+    Browser Use WebUI - AI-powered browser automation with a Gradio web interface.
+    Control a browser using natural language through various LLM providers (OpenAI, Anthropic, Google, etc.).
+
+    [b]Access Points:[/b]
+    - WebUI: Port 7788 (Gradio interface)
+    - noVNC: Port 6080 (browser view via web)
+    - VNC: Port 5901 (native VNC client)
+    - CDP: Port 9222 (Chrome DevTools Protocol)
+
+    [b]Default VNC Password:[/b] yourvncpassword (change via VNC_PASSWORD)
+  </Overview>
+  <Category>Productivity: Tools:AI</Category>
+  <WebUI>http://[IP]:[PORT:7788]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/browser-use/web-ui/main/assets/web-ui.png</Icon>
+  <ExtraParams>--shm-size=2gb --cap-add=SYS_ADMIN</ExtraParams>
+  <PostArgs/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="7788" Default="7788" Mode="tcp" Description="Gradio Web Interface" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="noVNC Port" Target="6080" Default="6080" Mode="tcp" Description="Browser view via web (noVNC)" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="VNC Port" Target="5901" Default="5901" Mode="tcp" Description="Native VNC client access" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="CDP Port" Target="9222" Default="9222" Mode="tcp" Description="Chrome DevTools Protocol" Type="Port" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="App Data" Target="/app/data" Default="/mnt/user/appdata/browser-use-webui" Mode="rw" Description="Persistent storage for browser data and configuration" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="OPENAI_API_KEY" Target="OPENAI_API_KEY" Default="" Mode="" Description="OpenAI API Key" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="ANTHROPIC_API_KEY" Target="ANTHROPIC_API_KEY" Default="" Mode="" Description="Anthropic API Key" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="GOOGLE_API_KEY" Target="GOOGLE_API_KEY" Default="" Mode="" Description="Google API Key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="VNC_PASSWORD" Target="VNC_PASSWORD" Default="yourvncpassword" Mode="" Description="Password for VNC access" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="RESOLUTION" Target="RESOLUTION" Default="1920x1080x24" Mode="" Description="Display resolution (WIDTHxHEIGHTxDEPTH)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="TZ" Target="TZ" Default="America/New_York" Mode="" Description="Timezone" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
